@@ -47,15 +47,16 @@
             padding-right: 15px;
             padding-top: 7px;
             padding-bottom: 7px;
-            /*
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%; */
+            background-color: #181818;
         }
 
         .wrapper {
             display: block;
+        }
+
+        .fireworks{
+            position: absolute;
+            z-index: -2;
         }
     </style>
     <script src="anime.min.js"></script>
@@ -79,45 +80,11 @@
             <div style="clear: both;"></div>
         </div>
     </div>
+    <canvas class="fireworks"></canvas>
+    <!---->
 
-    <script>
-        const countDownDate = new Date("Jan 26, 2023 17:30:00").getTime();
-        function Z() {
-            var timeleft = countDownDate - new Date().getTime();
-            var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-            document.getElementById("mins").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("secs").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-        }
-        Z();
-        setInterval(Z, 1000);
+    <script src="index.js"></script>
 
-        var tl = anime.timeline();
-        tl.add({
-            targets: '.wrapper',
-            translateY: {
-                value: [100, 0],
-                duration: 1000
-            },
-            opacity: [0, 1],
-            delay: 1200,
-            easing: 'easeOutElastic'
-        });
-        tl.add({
-            targets: '.linia',
-            scale: {
-                value: [0, 1],
-                duration: 400
-            },
-            delay: anime.stagger(200),
-            opacity: [0, 1],
-            easing: 'easeOutElastic'
-        });
-    </script>
 </body>
 
 </html>
