@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>o_o</title>
+    <style>
+        p {
+            display: inline;
+            font-size: 40px;
+            margin: 0px;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0px;
+        }
+
+        body {
+            color: whitesmoke;
+            background-color: #181818;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .znak {
+            color: grey;
+            font-size: large;
+            margin-left: 1px;
+        }
+
+        .linia {
+            margin-right: 3px;
+            margin-left: 3px;
+            text-align: center;
+            float: left;
+        }
+
+        .cont {
+            border: 4px solid whitesmoke;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            /*
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%; */
+        }
+
+        .wrapper {
+            display: block;
+        }
+    </style>
+    <script src="anime.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="cont">
+            <div class="linia">
+                <p id="days"></p><span class="znak">D</span>
+            </div>
+            <div class="linia">
+                <p id="hours"></p><span class="znak">G</span>
+            </div>
+            <div class="linia">
+                <p id="mins"></p><span class="znak">M</span>
+            </div>
+            <div class="linia">
+                <p id="secs"></p><span class="znak">S</span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+    <script>
+        const countDownDate = new Date("Jan 26, 2023 17:30:00").getTime();
+        function Z() {
+            var timeleft = countDownDate - new Date().getTime();
+            var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("mins").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("secs").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        }
+        Z();
+        setInterval(Z, 1000);
+
+        var tl = anime.timeline();
+        tl.add({
+            targets: '.wrapper',
+            translateY: {
+                value: [100, 0],
+                duration: 1000
+            },
+            opacity: [0, 1],
+            delay: 1200,
+            easing: 'easeOutElastic'
+        });
+        tl.add({
+            targets: '.linia',
+            scale: {
+                value: [0, 1],
+                duration: 400
+            },
+            delay: anime.stagger(200),
+            opacity: [0, 1],
+            easing: 'easeOutElastic'
+        });
+    </script>
+</body>
+
+</html>
