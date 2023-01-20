@@ -14,8 +14,12 @@ function Z() {
 Z();
 setInterval(Z, 1000);
 
+
 /*-- ANIME.JS --*/
+let wrapperStyle = wrapper.style;
 var tl = anime.timeline();
+
+wrapperStyle.display = 'block';
 tl.add({
     targets: '.animation-box',
     translateY: {
@@ -36,6 +40,7 @@ tl.add({
     opacity: [0, 1],
     easing: 'easeOutElastic'
 });
+
 
 /*-- PARTICLES --*/
 var numberOfEls = 100;
