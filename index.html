@@ -4,66 +4,16 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
     <title>o_o</title>
     <style>
-        p {
-            display: inline;
-            font-size: 40px;
-            margin: 0px;
-        }
-
-        html,
-        body {
-            height: 100%;
-            margin: 0px;
-        }
-
-        body {
-            color: whitesmoke;
-            background-color: #181818;
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .znak {
-            color: grey;
-            font-size: large;
-            margin-left: 1px;
-        }
-
-        .linia {
-            margin-right: 3px;
-            margin-left: 3px;
-            text-align: center;
-            float: left;
-        }
-
-        .cont {
-            border: 4px solid whitesmoke;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 7px;
-            padding-bottom: 7px;
-            background-color: #181818;
-        }
-
-        .wrapper {
-            display: block;
-        }
-
-        .fireworks{
-            position: absolute;
-            z-index: -2;
-        }
+        
     </style>
     <script src="anime.min.js"></script>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="animation-box">
         <div class="cont">
             <div class="linia">
                 <p id="days"></p><span class="znak">D</span>
@@ -80,8 +30,6 @@
             <div style="clear: both;"></div>
         </div>
     </div>
-    <canvas class="fireworks"></canvas>
-    <!---->
 
     <script src="index.js"></script>
 
