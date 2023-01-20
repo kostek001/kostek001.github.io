@@ -58,7 +58,8 @@ body {
     height: 100%;
 }
 
-.particule {
+.particule,
+.particle-box {
     position: absolute;
     z-index: -2;
 }
