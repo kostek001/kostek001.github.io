@@ -1,5 +1,5 @@
 /*-- TIMER --*/
-const countDownDate = new Date("Jan 26, 2023 17:30:00").getTime();
+const countDownDate = new Date("Jun 23, 2023 00:30:00").getTime();
 function Z() {
     var timeleft = countDownDate - new Date().getTime();
     var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
